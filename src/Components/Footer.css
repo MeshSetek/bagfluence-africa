@@ -1,0 +1,41 @@
+/* src/Footer.css */
+
+.footer {
+  background-color: #222;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-about, .footer-social, .footer-location {
+  width: 30%;
+  margin: 10px;
+}
+
+.footer-about h3, .footer-social h3, .footer-location h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.footer-social .social-links a {
+  display: block;
+  margin: 5px 0;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.footer-social .social-links a:hover {
+  color: #f0a500; /* Hover color for links */
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 0.9em;
+}

@@ -1,38 +1,336 @@
-.App {
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #585555;
+  color: #f1f1f1;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Header */
+header {
+  background-color: #3f3b3b;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  height: 150px;
+  border-radius:15px;
+  position: relative;
+}
+
+/* Mobile Hamburger */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+}
+
+header h1 {
+  font-size: 50px;
+  color: #fff;
+  letter-spacing: 1px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav a {
+  margin: 5px;
+  font-size: 1.1rem;
+  color: #bbb;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  text-align: right;
+}
+
+nav a:hover {
+  color: #beb8b7;
+  transform: translateY(-3px);
+}
+
+.navbar-links {
+  display: flex;
+}
+
+.navbar-links.active {
+  display: block;
+}
+
+.navbar-links ul {
+  display: flex;
+  margin: 0;
+}
+
+.navbar-links ul li {
+  padding: 8px;
+}
+
+.navbar-links ul li a {
+  font-size: 1.1rem;
+  color: #bbb;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('https://via.placeholder.com/1500x600');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Product Section */
+.product-section {
+  padding: 80px 20px;
+  background-color: #1a1a1a;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background-color: #222;
+  border: 1px solid #444;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 1px solid #444;
+}
+
+.product-card .info {
+  padding: 20px;
+}
+
+.product-card .info h3 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.product-card .info p {
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.product-card .info .price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #d6ccca;
+}
+
+.product-card .info .add-to-cart-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #ff6347;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 6px;
+  font-weight: 700;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.product-card .info .add-to-cart-btn:hover {
+  background-color: #c84e3d;
+}
+
+/* Footer */
+footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 1px solid #444;
+}
+
+footer a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover {
+  color: #a19f9f;
+  transform: translateY(-3px);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: auto;
+}
+
+.text-center {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Media Queries */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  .navbar-links {
+    display: none; /* Initially hide links */
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    align-items: center;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    color: #fff;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* General Link Styling as Buttons */
+a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #333;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+a:hover {
+  background-color: #474241;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Footer Links Styled as Buttons */
+footer a {
+  margin: 10px;
+  font-size: 1rem;
+  padding: 10px 25px;
+  background-color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover {
+  background-color: #414040;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+img {
+  width: 280px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 150%;
+  object-fit: cover;
 }
